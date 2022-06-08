@@ -64,4 +64,11 @@ print(res)
 print(len(res))
 
 # Importing Job description
+jd_data= docx2txt.process("JD.docx")
+jd= tokenize(jd_data)
+print(jd)
+
+count_jd=len(jd)
+print("Number of unique words in JD file is " "",count_jd)
+
 
