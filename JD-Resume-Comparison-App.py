@@ -1,29 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[9]:
-
-
 #Import Libraries
 import pandas as pd
 import numpy as np
 import re
 
-
-# In[10]:
-
-
-pip install docx2txt 
-
-
-# In[11]:
-
-
 import docx2txt
-
-
-# In[12]:
-
 
 #Importing additional libraries for ML
 import nltk
@@ -32,15 +12,10 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
-
 r_data= docx2txt.process("Sadique_Abdullah_Resume_internship_Rdc.docx")
 
-
-# In[13]:
-
-
 # # Write a tokenization function to process your text data
-#
+
 def tokenize(text):
     """
     This function is to process the received messages(text) into usable form.
@@ -69,16 +44,8 @@ def tokenize(text):
 
     return clean_tokens
 
-
-# In[14]:
-
-
 d= tokenize(r_data)
 print(d)
-
-
-# In[19]:
-
 
 count=len(d)
 print(count)
@@ -94,15 +61,7 @@ for i in d:
 
 print(res)
 
-
-# In[16]:
-
-
 print(len(res))
-
-
-# In[ ]:
-
 
 # Importing Job description
 
