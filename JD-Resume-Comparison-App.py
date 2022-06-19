@@ -66,9 +66,24 @@ print(len(res))
 # Importing Job description
 jd_data= docx2txt.process("JD.docx")
 jd= tokenize(jd_data)
-print(jd)
+print("Total number of of words in JD file is " "", jd)
 
 count_jd=len(jd)
 print("Number of unique words in JD file is " "",count_jd)
+# Number of matching words
+
+def comparator(x,y):
+    result = []
+    for i in x:
+        if i in y:
+            result.append(i)
+    return result
+print(comparator(jd,res))
+print("Count of words matching while comparing resume and JD is ",len(comparator(jd,res)))
+
+
+
+
+
 
 
