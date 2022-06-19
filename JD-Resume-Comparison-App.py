@@ -81,6 +81,9 @@ def comparator(x,y):
 print(comparator(jd,res))
 print("Count of words matching while comparing resume and JD is ",len(comparator(jd,res)))
 
+# Percent of match between JD and resume#
+print(f'Current JD and Resume match is {len(comparator(jd,res))/ len(jd)*100:.2f}%')
+
 
 
 
