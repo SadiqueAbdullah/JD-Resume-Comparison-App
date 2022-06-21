@@ -14,7 +14,7 @@ from nltk.corpus import stopwords
 
 r_data= docx2txt.process("Sadique_Abdullah_Resume_internship_Rdc.docx")
 
-# # Write a tokenization function to process your text data
+# # Tokenization function to process your text data
 
 def tokenize(text):
     """
@@ -46,9 +46,7 @@ def tokenize(text):
 
 d= tokenize(r_data)
 print(d)
-
-count=len(d)
-print(count)
+print("Number of words in uploaded Resume is ",len(d))
 dni = ['sadique', 'mohammad', 'abdullah', 'gmail', 'com', 'linkedin', 'github', 'sadiqueabdullah', '9', 'profile', 'summary',
       'i', 'currently', 'pursuing', 'full', 'time','san', 'francisco', 'seeking','us','of', 'california', 'usa','0','stem',
       'kalinga', 'institute', 'industrial', 'technology', 'bhubaneswar', 'india', 'b', 'tech','00', 'work','present',
@@ -61,17 +59,17 @@ for i in d:
 
 print(res)
 
-print(len(res))
+print('Number of unique words in uploaded Resume is ',len(res))
 
 # Importing Job description
 jd_data= docx2txt.process("JD.docx")
 jd= tokenize(jd_data)
-print("Total number of of words in JD file is " "", jd)
+print("Total number of of words in JD file is " "", len(jd))
 
 count_jd=len(jd)
 print("Number of unique words in JD file is " "",count_jd)
-# Number of matching words
 
+# Number of matching words
 def comparator(x,y):
     result = []
     for i in x:
