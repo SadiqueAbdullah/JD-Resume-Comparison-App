@@ -11,8 +11,9 @@ nltk.download(['wordnet', 'punkt', 'stopwords'])
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
+import matplotlib.pyplot as plt
 
-r_data= docx2txt.process("Sadique_Abdullah_Resume_internship_Rdc.docx")
+resume = docx2txt.process("Sadique_Abdullah_Resume_internship_Rdc.docx")
 
 # # Tokenization function to process your text data
 
@@ -44,16 +45,16 @@ def tokenize(text):
 
     return clean_tokens
 
-d= tokenize(r_data)
-print(d)
-print("Number of words in uploaded Resume is ",len(d))
+resume_data = tokenize(resume)
+print(resume_data)
+print("Number of words in uploaded Resume is ",len(resume_data))
 dni = ['sadique', 'mohammad', 'abdullah', 'gmail', 'com', 'linkedin', 'github', 'sadiqueabdullah', '9', 'profile', 'summary',
       'i', 'currently', 'pursuing', 'full', 'time','san', 'francisco', 'seeking','us','of', 'california', 'usa','0','stem',
       'kalinga', 'institute', 'industrial', 'technology', 'bhubaneswar', 'india', 'b', 'tech','00', 'work','present',
       'assistant', 'independent','0k','hindustan', 'aeronautics', 'limited','for', 'playing', 'vital', 'rounder', 'role',
       'bronze','recc', 'honeywell', 'aerospace', 'tempe', 'bangalore', 'senior', 'principal', 'gold', 'being', 'first',]
 res = []
-for i in d:
+for i in resume_data:
     if i not in res and i not in dni:
         res.append(i)
 
@@ -82,9 +83,8 @@ print("Count of words matching while comparing resume and JD is ",len(comparator
 # Percent of match between JD and resume#
 print(f'Current JD and Resume match is {len(comparator(jd,res))/ len(jd)*100:.2f}%')
 
-
-
-
-
-
-
+# Refernce plot for word counts
+plt.figure(figsize=(10,5))
+val = range(1,len(comparator(jd,res))+1)
+plt.barh(comparator(jd,res),range(1,len(comparator(jd,res))+1))
+plt.show()
