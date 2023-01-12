@@ -70,7 +70,7 @@ def unique(list):
             uniq_lst.append(x)
     return uniq_lst
 
-# Importing Job description
+# Importing Job description "Text"
 
 jd_data= docx2txt.process("JD.docx")
 jd= tokenize(jd_data)
@@ -79,14 +79,14 @@ jd_uniq = unique(jd)
 count_jd=len(jd_uniq)
 print("Number of unique words in JD file is " "",count_jd)
 
-# Number of matching words
+# Function for Number of matching words
 def comparator(x,y):
     result = []
     for i in x:
         if i in y:
             result.append(i)
     return result
-#print(comparator(jd,res))
+
 my_list = comparator(jd,res)
 
 # Creating the sorted list of  Key words after resume and Jd Comparison
@@ -115,6 +115,7 @@ table = sorted(table, key=lambda x: x[1], reverse= True)
 for value, count in table:
     print(f"{value}: {count}")
 
+# Count of matching word JD-Resume
 print("Count of words matching while comparing resume and JD is ",len(comparator(jd,res)))
 
 # Percent of match between JD and resume#
